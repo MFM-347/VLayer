@@ -27,6 +27,6 @@ Then follow the instructions and you are ready to go :rocket:
 [license-src]: https://img.shields.io/github/license/Atinux/content-wind.svg?style=flat&colorA=18181B&colorB=28CF8D
 [license-href]: https://github.com/Atinux/content-wind/blob/main/LICENSE
 [version-src]: https://img.shields.io/npm/v/@tfs-8/v-layer?style=flat&colorA=18181B&colorB=28CF8D
-[version-href]: https://github.com/MFM-347/VLayer/
+[version-href]: https://www.npmjs.com/package/@tfs-8/v-layer
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?&logo=nuxt.js
 [nuxt-href]: https://nuxt.com

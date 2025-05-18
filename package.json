@@ -1,10 +1,11 @@
 {
   "name": "@tfs-8/v-layer",
-  "description": "A website theme powered by Nuxt, TailwindCSS and Vue components.",
+  "description": "A website theme powered by Nuxt, TailwindCSS, NuxtSEO and Vue components.",
   "private": false,
-  "version": "0.9.9",
+  "version": "1.0.0",
   "type": "module",
   "main": "nuxt.config.ts",
+  "keywords": ["nuxt", "tailwindcss", "theme", "layer", "nuxt-layer", "nuxtseo"],
   "scripts": {
     "dev": "nuxi dev .playground",
     "dev:prepare": "nuxt prepare .playground",

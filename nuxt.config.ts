@@ -1,33 +1,83 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/content',
-    '@nuxt/icon',
-    '@nuxt/eslint',
-    '@nuxtjs/color-mode',
-  ],
+  compatibilityDate: '2025-02-19',
 
-  css: ['assets/css/main.css'],
-  colorMode: { classSuffix: '' },
+  future: {
+    compatibilityVersion: 4,
+  },
 
-  content: {
+  devtools: { enabled: true },
+
+  modules: ['@nuxt/fonts', '@nuxtjs/seo'],
+
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/'],
+    },
+  },
+
+  css: ['@/style.css'],
+
+  vite: { plugins: [tailwindcss()] },
+
+  vite: {
+    plugins: [tailwindcss()],
     build: {
-      markdown: {
-        highlight: {
-          // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
-          theme: {
-            dark: 'github-dark',
-            default: 'github-light',
-          },
+      cssMinify: true,
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
         },
       },
     },
   },
-  future: {
-    compatibilityVersion: 4,
-  },
-  compatibilityDate: '2025-02-19',
 
-  vite: { plugins: [tailwindcss()] },
+  modules: ['@nuxtjs/seo'],
+
+  schemaOrg: {
+    identity: {
+      type: 'Organization',
+      logo: '/icon.svg',
+      sameAs: [
+        'https://github.com/mfm-347',
+        'https://dev.to/mfm-347',
+        'https://codepen.io/mfm-347/',
+        'https://twitter.com/@mfm347',
+      ],
+    },
+  },
+
+  sitemap: {},
+
+  robots: {
+    UserAgent: '*',
+    Disallow: '',
+  },
+
+  features: {
+    inlineStyles: true,
+  },
+
+  app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in',
+    },
+  },
+
+  experimental: {
+    viewTransition: true,
+    renderJsonPayloads: true,
+  },
+
+  routeRules: {
+    '/**/*.{css,svg,png,woff2}': {
+      headers: {
+        'Cache-Control': 'public, max-age=432000, stale-while-revalidate=604800',
+      },
+    },
+  },
 })
